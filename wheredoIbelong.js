@@ -11,14 +11,16 @@ function getIndexToIns(arr, num) {
       }
   }
   
-  for (j = 0; j < board.length; j++) {
-    for (i = 0; i < arr.length;) {
-        if (arr[i] < board[j]) {
-        i++;
+  arr.sort(function(a, b) {
+    return a - b;
+  });
+  
+  for (i = 0; i < arr.length; i++) {
+        if (arr[i] ==  board[0]) {
+          return i; 
         }
-        return i;
       }
-    }
+    
 }
 
-getIndexToIns([40, 60], 50);
+getIndexToIns([5, 3, 20, 3], 5);
